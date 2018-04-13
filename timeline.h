@@ -11,7 +11,7 @@ public:
   ~Timeline();
 
   /*!
-   * Container for holding timeline events.
+   * \brief Container for holding timeline events.
    */
   struct Event {
     int timestep;
@@ -37,14 +37,14 @@ public:
   using Token = std::shared_ptr<void>;
 
   /*!
-   * Subscribe to timeline events.
+   * \brief Subscribe to timeline events.
    * \param callback function for receiving triggered events
    * \return token that unsubscribes the listener on destruction
    */
   Token subscribe(Callback);
 
   /*!
-   * Inserts a deep-copy of the event in the queue.
+   * \brief Inserts a deep-copy of the event in the queue.
   */
   void push(Event const &);
 
@@ -57,17 +57,17 @@ public:
   void push(Event &&);
 
   /*!
-   * Constructs an event in-place and sorts the queue.
+   * \brief Constructs an event in-place and sorts the queue.
    */
   void emplace(int timestep, std::any value);
 
   /*!
-   * Advances the timeline a single timestep.
+   * \brief Advances the timeline a single timestep.
    */
   void step();
 
   /*!
-   * Accessor for the current simulation timestep,
+   * \brief Accessor for the current simulation timestep,
    */
   int getTimestep() const;
 
