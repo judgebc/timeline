@@ -75,6 +75,3 @@ private:
   struct Private;
   std::unique_ptr<Private> pImpl;
 };
-
-/// operator overload for ordering timeline events in the priority queue
-bool operator<(Timeline::Event const &lhs, Timeline::Event const &rhs);

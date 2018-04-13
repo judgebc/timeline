@@ -87,6 +87,7 @@ int Timeline::getTimestep() const
   return pImpl->timestep;
 }
 
+/// operator overload for ordering timeline events in the priority queue
 bool operator<(Timeline::Event const &lhs, Timeline::Event const &rhs)
 {
   /*
